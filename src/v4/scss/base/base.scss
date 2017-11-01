@@ -1,0 +1,89 @@
+@charset 'utf-8';
+
+$default-bg: #f7f7f7;
+$default-color: #333;
+$gray-bg: #efeff4;
+
+.flex {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+}
+.flex-vertical {
+    -webkit-box-orient: vertical;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+}
+.flex-1 {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    flex: 1;
+}
+.flex-align-center {
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    }
+.flex-pack-center {
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+}
+.position-align-center{
+    position: absolute;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+}
+.position-vertical-center{
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+.fixed-center{
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+.ellipsis{
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    width: 100%;
+}
+
+.clearfix:after {
+    clear: both;
+    display: block;
+    visibility: hidden;
+    height: 0;
+    line-height: 0;
+    font-size: 0;
+    content: "";
+}
+@mixin border ($position, $color) {
+    & {
+        position: relative;
+    }
+    &:before{
+        content: '';
+        position: absolute;
+        left: 0;
+        @if $position == top {
+            top: 0;
+        } @else if $position == bottom {
+            bottom: 0;
+        }
+        width: 100%;
+        border-bottom: 1px solid $color; /*no*/
+    }
+    [data-dpr="1"] &:before {
+        -webkit-transform:scaleY(.5);
+        -webkit-transform-origin:0 0;
+        transform-origin: 0 0;
+        transform: scaleY(0.5);
+    }
+}

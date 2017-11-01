@@ -1,0 +1,11 @@
+.no-network{
+    display: none;
+    padding: 30px; /*px*/
+    color: #fff;
+    font-size: 28px; /*px*/
+    border-radius: 12px; /*px*/
+    white-space: nowrap;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 999;
+    @extend .fixed-center;
+}

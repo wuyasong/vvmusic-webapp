@@ -1,0 +1,48 @@
+.touchlist{
+	position: relative;
+	z-index: 2;
+}
+.downRefreshElem{
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 52px; /*no*/
+	line-height: 52px; /*no*/
+	text-align: center;
+	z-index: 1;
+	@extend .flex;
+	@extend .flex-align-center;
+	@extend .flex-pack-center;
+}
+.pulltorefreshIcon{
+	width: 12px;
+	height: 30px;
+	background: url(../../images/ic_pulltorefresh_arrow.png) no-repeat;
+	background-size: cover;
+	-webkit-transform: rotate(0deg);
+	-webkit-transition: -webkit-transform .3s ease;
+}
+.pulltorefreshIcon.canRefresh{
+	-webkit-transform: rotate(-180deg);
+}
+.pulldown{
+	font-size: 26px; /*px*/
+	color: #333;
+	text-align: center;
+	padding-left: 20px;
+}
+.loadingState{
+	top: 13px;
+	background: url(../../images/loading.png) no-repeat center center;
+	background-size: 26px auto; width: 26px; height: 26px; 
+	-webkit-animation: loadingGIF 1s infinite linear;
+}
+@-webkit-keyframes loadingGIF{
+	0%{
+		-webkit-transform: rotate(0deg);
+	}
+	100%{
+		-webkit-transform: rotate(359deg);
+	}
+}

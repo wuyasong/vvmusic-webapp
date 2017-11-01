@@ -1,0 +1,100 @@
+@charset 'utf-8';
+
+@import '../base/base';
+@import '../helpers/loading';
+@import '../helpers/noNetwork';
+@import '../helpers/pullrefresh';
+
+$border-color: #dedede;
+
+html, body{
+    height: 100%;
+}
+.container{
+    background: $gray-bg;
+    min-height: 100%;
+}
+.singer-hot{
+    background: #fff;
+    padding: 20px 12px;
+    border-bottom: 2px solid $border-color; /*px*/
+
+    header{
+        font-size: 28px; /*px*/
+        color: $default-color;
+        padding-left: 20px;
+        margin-left: 8px;
+        height: 26px;
+        line-height: 26px;
+        position: relative;
+    }
+    header:after{
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 6px;
+        height: 26px;
+        background: #eb5046;
+        display: block;
+        border-radius: 6px;
+    }
+    .singer-list{
+        margin-top: 16px;
+        overflow: hidden;
+
+        ul{
+            white-space: nowrap;
+            font-size: 0;
+        }
+
+        li{
+            width: 120px;
+            padding: 0 8px;
+            display: inline-block;
+            overflow: hidden;
+
+            .singer-cover{
+                width: 120px;
+                height: 120px;
+                background-color: $default-bg;
+                background-size: cover;
+                background-position: center center;
+            }
+            .singer-name{
+                margin-top: 16px;
+                font-size: 24px; /*px*/
+                text-align: center;
+                color: $default-color;
+                @extend .ellipsis;
+            }
+        }
+    }
+}
+.singer-category{
+    li{
+        height: 66px;
+        line-height: 66px;
+        padding-left: 20px;
+        font-size: 28px; /*px*/
+        color: $default-color;
+        background: #fff;
+        border-bottom: 2px solid $border-color; /*px*/
+        position: relative;
+    }
+    li:first-child, li:nth-of-type(3n-1){
+        margin-top: 20px;
+        border-top: 2px solid $border-color; /*px*/
+    }
+    li:after{
+        content: '';
+        position: absolute;
+        right: 20px;
+        display: block;
+        width: 20px;
+        height: 28px;
+        background: url(../../images/arrowIcon.png) no-repeat;
+        background-size: auto 28px;
+        @extend .position-vertical-center;
+    }
+}

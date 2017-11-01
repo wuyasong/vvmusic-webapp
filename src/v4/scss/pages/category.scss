@@ -1,0 +1,66 @@
+@charset 'utf-8';
+
+@import '../base/base';
+@import '../helpers/noNetwork';
+@import '../helpers/pullrefresh';
+
+html, body{
+    height: 100%;
+}
+.container{
+    background: #efeff4;
+    min-height: 100%;
+}
+.category{
+    padding-top: 16px;
+    @extend .flex;
+
+    aside{
+        background: #fff;
+        @extend .flex;
+        @extend .flex-vertical;
+        @extend .flex-1;
+        @extend .flex-align-center;
+        @extend .flex-pack-center;
+
+        .category-icon{
+            width: 46px;
+            height: 46px;
+            display: block;
+            background-size: 100% 100%;
+        }
+        .category-title{
+            color: #8c8c8c;
+            font-size: 26px; /*px*/
+            margin-top: 6px;
+        }
+    }
+    nav{
+        width: 486px;
+        margin-bottom: -2px; /*px*/
+
+        .category-list li{
+            width: 160px;
+            height: 74px;
+            margin-left: 2px; /*px*/
+            margin-bottom: 2px; /*px*/
+            float: left;
+            background: #fff;
+            text-align: center;
+            line-height: 74px;
+            font-size: 26px; /*px*/
+            color: #222;
+            position: relative;
+
+            .category-hot-icon{
+                width: 42px;
+                height: 42px;
+                position: absolute;
+                left: 0;
+                top: 0;
+                background: url(../../images/hotIcon.png) no-repeat;
+                background-size: cover;
+            }
+        }
+    }
+}

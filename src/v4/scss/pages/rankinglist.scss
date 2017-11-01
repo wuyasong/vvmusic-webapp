@@ -1,0 +1,98 @@
+@charset 'utf-8';
+
+@import '../base/base';
+@import '../helpers/loading';
+@import '../helpers/noNetwork';
+@import '../helpers/pullrefresh';
+
+.rankinglist{
+    padding: 0 20px 20px;
+    background: #fff;
+
+    section{
+        padding-top: 40px;
+
+        header{
+            font-size: 30px; /*px*/
+            color: #222;
+        }
+        .rankinglist-box{
+            background-color: #fafafa;
+            margin-top: 10px;
+            border-radius: 8px; /*px*/
+            overflow: hidden;
+            @extend .flex;
+        }
+    }
+}
+.rankinglist-cover{
+    width: 188px;
+    height: 188px;
+    background-size: cover;
+}
+.rankinglist-list{
+    padding-left: 28px;
+    padding-top: 20px;
+    box-sizing: border-box;
+    overflow: hidden;
+    @extend .flex-1;
+
+    li{
+        padding-bottom: 12px;
+        box-sizing: border-box;
+        @extend .ellipsis;
+        
+        span{
+            vertical-align: middle;
+        }
+        .rankinglist-number{
+            float: left;
+            width: 28px; /*px*/
+            height: 28px; /*px*/
+            border-radius: 6px; /*px*/
+            vertical-align: middle;
+            text-align: center;
+            line-height: 28px; /*px*/
+            background: #9ca7b6;
+            font-size: 20px; /*px*/
+            color: #fff;
+        }
+        // 必须有内容撑开，否则文字不会居中
+        .rankinglist-number:after{
+            content: '';
+            height: 100%;
+            vertical-align: middle;
+            width: 0;
+            display: inline-block;
+        }
+        .rankinglist-songname{
+            padding-left: 12px;
+            font-size: 24px; /*px*/
+            color: $default-color;
+            line-height: 28px;
+        }
+        &:nth-of-type(1) .rankinglist-number{
+            background: #f30100;
+        }
+        &:nth-of-type(2) .rankinglist-number{
+            background: #f19601;
+        }
+        &:nth-of-type(3) .rankinglist-number{
+            background: #f0ce0f;
+        }
+    }
+}
+.rankinglist-arrow{
+    width: 48px;
+    @extend .flex;
+    @extend .flex-align-center;
+    @extend .flex-pack-center;
+    
+    i{
+        width: 20px;
+        height: 32px;
+        display: block;
+        background: url(../../images/arrowIcon.png) no-repeat;
+        background-size: cover;
+    }
+}

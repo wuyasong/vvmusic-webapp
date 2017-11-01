@@ -1,0 +1,85 @@
+@charset 'utf-8';
+
+@import '../base/base';
+@import '../helpers/loading';
+@import '../helpers/noNetwork';
+@import '../helpers/pullrefresh';
+
+$border-color: #dfdfdf;
+
+.container, .touchlist{
+    background: #efeff4;
+}
+.song{
+    padding: 12px 10px 0;
+    @extend .flex;
+
+    section {
+        padding: 20px 10px 0;
+        overflow: hidden;
+        @extend .flex-1;
+    }
+}
+.songlist li{
+    margin-bottom: 20px;
+    background: #fff;
+
+    &:last-child{
+        margin-bottom: 0;
+    }
+
+    .songlist-cover{
+        height: 286px;
+        background-size: cover;
+        background-color: #fff;
+        overflow: hidden;
+    }
+    .songlist-info{
+        padding: 10px;
+        border-style: solid;
+        border-color: $border-color;
+        border-width: 0 2px 2px; /*px*/
+    }
+    .songlist-info-txt{
+        display: block;
+        width: 100%;
+        font-size: 24px; /*px*/
+        color: #202020;
+        @extend .ellipsis;
+    }
+    .songlist-data{
+        display: block;
+        padding-top: 12px;
+        font-size: 0;
+    }
+    .songlist-data-item{
+        display: inline-block;
+        width: 128px;
+        height: 22px;
+        font-size: 0;
+        overflow: hidden;
+
+        i{
+            display: inline-block;
+            width: 31px;
+            height: 24px;
+            margin-right: 4px;
+            background-size: auto 22px; /*px*/
+            background-repeat: no-repeat;
+            vertical-align: middle;
+        }
+        b{
+            display: inline-block;
+            font-size: 18px; /*px*/
+            color: #666;
+            vertical-align: middle;
+            font-weight: normal;
+        }
+        .songlist-like-icon{
+            background-image: url(../../images/likeIcon.png);
+        }
+        .songlist-play-icon{
+            background-image: url(../../images/listenIcon.png);
+        }
+    }
+}

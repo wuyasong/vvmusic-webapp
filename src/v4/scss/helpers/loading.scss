@@ -1,0 +1,45 @@
+.pull-up-loading-wrapper{
+    height: 80px; /*px*/
+}
+.pull-up-loading{
+    display: none;
+    padding: 20px; /*px*/
+    height: 40px; /*px*/
+    line-height: 40px; /*px*/
+    position: relative;
+    @extend .flex;
+}
+.pull-up-icon{
+    width: 40px; /*px*/
+    height: 40px; /*px*/
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    background: url(../../images/loading.png);
+    background-size: cover;
+    -webkit-animation: bound 1s infinite linear;
+    animation: bound 1s infinite linear;
+}
+.pull-up-txt{
+    font-size: 22px; /*px*/
+    text-align: center;
+    @extend .flex-1;
+}
+
+@-webkit-keyframes bound{
+	0%{
+		-webkit-transform: rotate(0deg);
+	}
+	100%{
+		-webkit-transform: rotate(359deg);
+	}
+}
+
+@keyframes bound{
+	0%{
+		-webkit-transform: rotate(0deg);
+	}
+	100%{
+		-webkit-transform: rotate(359deg);
+	}
+}
